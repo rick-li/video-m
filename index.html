@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="ng-app:extApp" id="ng-app">
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Title -->
+    <title></title>
+    <!-- Meta -->
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <link href='css/angular-carousel.min.css' rel='stylesheet' type='text/css'>
+
+
+
+    <!-- Stylesheets -->
+    <style>
+    .navbar {
+        border-radius: 0px;
+    }
+    .navbar-toggle {
+        float: left;
+        display:block;
+        margin-left: 15px;
+    }
+    .container {
+        max-width: 9999px;
+    }
+    .container>.navbar-header {
+        float: none !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+    .sp-search-btn {
+        float: right;
+        background: url('img/search.svg') no-repeat;
+        height:20px;
+        width:20px;
+        margin: 15px 25px 15px 15px;
+    }
+    .sp-sidebar {
+        position: absolute;
+        z-index: 1;
+    }
+    .sp-page {
+        position: absolute;
+        width:100%;
+        height:100%;
+        -webkit-transition-duration: .5s;
+        -webkit-transform: translateX(0%);
+        z-index: 10;
+        background: gainsboro;
+    }
+    .sp-expand .sp-page {
+        -webkit-transition-duration: .5s;
+        -webkit-transform: translateX(80%);
+    }
+    .sp-page .container {
+        padding: 0px !important;
+    }
+    .sp-page .panel-body {
+        padding: 0;
+    }
+    ul.puredom {
+      
+      height:auto;
+      font-size:0;
+    }
+    .puredom li {
+      background: #666;
+      text-align:center;
+      font-size:24px;
+    }
+    ul li{
+        list-style-type: none;
+    }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Start Menu list  -->
+    <div class="sp-sidebar" ng-controller="MenuCtrl">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
+
+            <ul class="nav">
+                <li>Sidebar</li>
+
+                <li class="active"><a href="#menu1" ng-click="toggleSidebar()">Test Menu1</a>
+                </li>
+                <li><a href="#">Link</a>
+                </li>
+                <li><a href="#">Link</a>
+                </li>
+                <li>Sidebar</li>
+                <li><a href="#">Link</a>
+                </li>
+                <li><a href="#">Link</a>
+                </li>
+                <li><a href="#">Link</a>
+                </li>
+                <li>Sidebar</li>
+                <li><a href="#">Link</a>
+                </li>
+                <li><a href="#">Link</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="sp-page">
+        <!-- End Menu list  -->
+        <div class="navbar navbar-inverse" ng-controller="MenuCtrl">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-click="toggleSidebar()">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project name</a>
+                    <span class="sp-search-btn" ng-click="showSearch = !showSearch" />
+                </div>
+
+
+
+                <!-- Start Search form -->
+                <form class="navbar-form navbar-left" role="search" ng-show="showSearch">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+
+                </form>
+                <!-- End Search form -->
+
+            </div>
+        </div>
+
+
+        <div class="container" ng-view>
+            
+
+
+           
+
+        </div>
+    </div>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="//code.angularjs.org/1.1.5/angular.js"></script>
+    <script src="js/angular/angular-resource.js"></script>
+    <script src="js/angular-mobile.js"></script>
+    <script src="js/angular-carousel.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>
